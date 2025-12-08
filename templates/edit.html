@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Edit a Note{% endblock %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Note</title>
+</head>
+<body>
+    <h1>This page allows you to edit a note</h1> <br>
+
+    <form method="post" action="{{ url_for('edit_note', note_id=note.id) }}">
+
+        <label>Title:</label>
+        <input type="text" name="note_title" value="{{ note.title }}" required> <br>
+
+        <label>Content:</label>
+        <input type="text" name="note_content" value="{{ note.content }}" required> <br>
+
+        <input type="submit" value="Save edit">
+    </form>
+</body>
+</html>
+
+{% endblock %}
+
+  

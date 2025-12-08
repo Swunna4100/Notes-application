@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Add a Note{% endblock %}
+
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add a note </title>
+</head> This page allow you to add notes  <br>
+<body>
+    <form method="post" action="{{url_for('add_note')}}">
+    <input type="text" name = "notetitle" placeholder = "Enter the title of the note"  nullable = False > <br>
+    <input type="text" name= "notecontent" placeholder = "Enter your note here"> <br>
+    <input type="submit" value= "Save note">
+    </form>
+    <form action="{{ url_for('view_notes') }}" method="GET" style="display:inline;">
+    <button type="submit">View Notes</button>
+    </form><br>
+</body>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+{% endblock %}
