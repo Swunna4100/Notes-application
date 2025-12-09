@@ -1,3 +1,5 @@
 __pycache__/
 instance/notes.db
 *.pyc
+
+git remote set-url origin https://Swunna4100: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@github.com/Swunna4100/Notes-application.git
