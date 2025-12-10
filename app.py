@@ -36,16 +36,9 @@ def create_app():
     from routes import register_routes
     register_routes(app, db)
 
-      # Auto-migrate on startup
-    with app.app_context():
-        try:
-            from alembic import command
-            from alembic.config import Config
-
-            alembic_cfg = Config("migrations/alembic.ini")
-            command.upgrade(alembic_cfg, "head")
-        except Exception as e:
-            print("Migration failed:", e)
+     #Auto make DB tables in render
+     with app.app_context():
+        db.create_all()
 
     return app
 
