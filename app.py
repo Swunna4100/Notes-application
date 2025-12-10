@@ -37,7 +37,7 @@ def create_app():
     register_routes(app, db)
 
      #Auto make DB tables in render
-     with app.app_context():
+    with app.app_context():
         db.create_all()
 
     return app
